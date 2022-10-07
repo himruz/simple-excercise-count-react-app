@@ -3,6 +3,7 @@ import Card from '../Cards/Card'
 import './Activity.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Activity = () => {
     const [cardDatas, setCardData] = useState([]);
@@ -17,7 +18,8 @@ const Activity = () => {
     return (
         <div className='container-fluid'>
             <div className="row">
-                <div className="card-container col-lg-9 mt-5">
+                
+                <div className="card-container col-lg-9">
                     <div className="title row">
                         <div className='d-flex align-items-center'>
                             <span className='icon'><FontAwesomeIcon icon={faDumbbell}></FontAwesomeIcon></span>
@@ -28,10 +30,11 @@ const Activity = () => {
                         cardDatas.map((cardData) => <Card data={cardData} key={cardData.id}></Card>)
                       } 
                     </div>
-                                                    
                 </div>
+                
                 <div className="col-lg-3">
-                    <h2>this is sidebar component</h2>
+                    <Sidebar></Sidebar>
+                    <h2>helloe</h2>
                 </div>
             </div>
         </div>
