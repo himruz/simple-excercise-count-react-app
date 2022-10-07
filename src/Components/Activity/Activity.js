@@ -34,7 +34,6 @@ const Activity = () => {
                 
                 <div className="col-lg-3">
                     <Sidebar></Sidebar>
-                    <h2>helloe</h2>
                 </div>
             </div>
         </div>
