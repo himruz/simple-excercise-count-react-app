@@ -1,0 +1,15 @@
+.card-container{
+    padding-left: 55px;
+  }
+  
+  span.icon {
+    font-size: 4rem;
+    color: #857ef1;
+    margin-right: 15px;
+  }
+  .title h2{
+    color:#857ef1;
+    font-weight: 700;
+    
+    font-size: 3rem;
+  }

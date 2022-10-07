@@ -1,0 +1,44 @@
+.card img {
+    padding: 10px;
+    border-radius: 24px;
+    height: 180px;
+}
+
+.card {
+    border-radius: 20px !important;
+}
+
+button.btn.btn-primary {
+    width: 78%;
+}
+
+p.age h5 {
+    margin-left: 11px;
+    position: relative;
+    top: 5px;
+}
+
+p.age{
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+p.time{
+    font-weight: 700;
+}
+
+p.time h5 {
+    margin-left: 11px;
+    position: relative;
+    top: 5px;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #857ef1;
+    --bs-btn-border-color: #857ef1;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #5b53db;
+    --bs-btn-hover-border-color: #5b53db;
+   
+}
