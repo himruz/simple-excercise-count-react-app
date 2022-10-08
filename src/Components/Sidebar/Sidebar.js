@@ -11,7 +11,7 @@ const Sidebar = ({excercises}) => {
     }
 
     const [breakTime, setBreakTime] = useState('')
-
+    // add break time
     const addBreak= (value) =>{
         setBreakTime(value)
     }
