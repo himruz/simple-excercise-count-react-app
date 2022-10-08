@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +9,13 @@ const Sidebar = ({excercises}) => {
     for (const excercise of excercises) {
         excerciseTime = excerciseTime + excercise.time
     }
+
+    const [breakTime, setBreakTime] = useState('')
+
+    const addBreak= (value) =>{
+        setBreakTime(value)
+    }
+
     return (
         <div className='sidebar mt-5'>
             <div className="profile-info d-flex align-items-center">
@@ -43,19 +50,19 @@ const Sidebar = ({excercises}) => {
                 </div>
                 <div className="add-break-wrapper text-center mt-3">
                     <div className="break-time">
-                        <span>10s</span>
+                        <span onClick={() =>{addBreak(10)}}>10s</span>
                     </div>
                     <div className="break-time">
-                        <span>20s</span>
+                        <span onClick={() =>{addBreak(20)}}>20s</span>
                     </div>
                     <div className="break-time">
-                        <span>30s</span>
+                        <span onClick={() =>{addBreak(30)}}>30s</span>
                     </div>
                     <div className="break-time">
-                        <span>40s</span>
+                        <span onClick={() =>{addBreak(40)}}>40s</span>
                     </div>
                     <div className="break-time">
-                        <span>50s</span>
+                        <span onClick={() =>{addBreak(50)}}>50s</span>
                     </div>
                 </div>
              </div>
@@ -69,7 +76,7 @@ const Sidebar = ({excercises}) => {
                 </div>
                 <div className="break d-flex align-items-center mt-3">
                     <h4 className='me-3'>Break Time</h4>
-                    <span>200 Second</span>
+                    <span>{breakTime} Second</span>
                 </div>
                 <div className="complete btn">
                     <button className='btn btn-primary'>Activity Completd</button>
