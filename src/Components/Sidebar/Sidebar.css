@@ -90,3 +90,8 @@ span.location-icon {
     width: 102%;
     margin-top: 30px;
 }
+
+.location p {
+    color: #6a6a6a;
+    font-weight: 600;
+}

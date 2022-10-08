@@ -24,7 +24,7 @@ const Sidebar = ({excercises}) => {
                     <h4>Hasan Imruz</h4>
                     <div className="location d-flex">
                         <span className='location-icon me-3'><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon></span>
-                        <p>Sylhet, Bangladesh</p>
+                        <p>Dhaka, Bangladesh</p>
                     </div>
                 </div>
             </div>
