@@ -3,7 +3,8 @@ import './Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { getLocal, setToLocal } from '../../utilites/utilities';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Sidebar = ({excercises}) => {
     let excerciseTime = 0;
@@ -26,8 +27,9 @@ const Sidebar = ({excercises}) => {
 
     const setBreakTimeUi = (breakTimeValue) =>{
         setBreakTime(breakTimeValue);
-    }
+    };
     
+    const notify = () => toast("Wow You Have Completed!");
 
     return (
         <div className='sidebar mt-5'>
@@ -92,10 +94,12 @@ const Sidebar = ({excercises}) => {
                     <span>{breakTime} Second</span>
                 </div>
                 <div className="complete btn">
-                    <button className='btn btn-primary'>Activity Completd</button>
+                    <button onClick={() =>{notify()}} className='btn btn-primary'>Activity Completd</button>
                 </div>
              </div>
+             <ToastContainer />
         </div>
+        
     );
 };
 

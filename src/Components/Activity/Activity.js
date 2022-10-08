@@ -4,6 +4,7 @@ import './Activity.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from '../Sidebar/Sidebar';
+import FAQ from '../FAQ/FAQ';
 
 const Activity = () => {
     const [cardDatas, setCardData] = useState([]);
@@ -38,10 +39,17 @@ const Activity = () => {
                         cardDatas.map((cardData) => <Card data={cardData} key={cardData.id} addToSidebar={addToSidebar}></Card>)
                       } 
                     </div>
+                    <div className="row">
+                    <div class="col-md-6 offset-md-3">
+                        <FAQ></FAQ>
+                    </div>
+                    </div>
                 </div>
                 
                 <div className="col-lg-3">
-                    <Sidebar excercises={sideBar}></Sidebar>
+                    
+                        <Sidebar excercises={sideBar}></Sidebar>
+                    
                 </div>
             </div>
         </div>
