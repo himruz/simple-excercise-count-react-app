@@ -1,20 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { getLocal, setToLocal } from '../../utilites/utilities';
+
 
 const Sidebar = ({excercises}) => {
-    console.log(excercises);
     let excerciseTime = 0;
     for (const excercise of excercises) {
         excerciseTime = excerciseTime + excercise.time
     }
 
-    const [breakTime, setBreakTime] = useState('')
-    // add break time
+    const [breakTime, setBreakTime] = useState(0);
+
     const addBreak= (value) =>{
-        setBreakTime(value)
+        setToLocal(value);
+        setBreakTime(value);
     }
+
+    useEffect(()=>{
+        const getBreakTime = getLocal();
+        setBreakTimeUi(getBreakTime);
+        
+    },[]);
+
+    const setBreakTimeUi = (breakTimeValue) =>{
+        setBreakTime(breakTimeValue);
+    }
+    
 
     return (
         <div className='sidebar mt-5'>
