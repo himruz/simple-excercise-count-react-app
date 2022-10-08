@@ -7,7 +7,7 @@ const Card = (props) => {
     
     return (
         
-            <div className="col-lg-4 mt-5">
+            <div className="col-lg-4 mt-4">
                 <div className="card shadow"  style={{width: '18rem'}}>
                     <img src={img} alt="" />
                     <div className="card-body">
