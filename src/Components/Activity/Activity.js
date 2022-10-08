@@ -7,6 +7,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Activity = () => {
     const [cardDatas, setCardData] = useState([]);
+    const [sideBar, setSideBar] = useState([]);
 
     useEffect(()=>{
         fetch('data.json')
@@ -15,6 +16,13 @@ const Activity = () => {
             setCardData(data)
         })
     },[])
+
+    const addToSidebar = (slectedData) =>{
+        const newSidaBar = [...sideBar, slectedData]
+        setSideBar(newSidaBar)
+        // console.log(sideBar)
+    }
+
     return (
         <div className='container-fluid'>
             <div className="row">
@@ -27,13 +35,13 @@ const Activity = () => {
                         </div>
                         <h3>Select Today's Excercise</h3>
                         {
-                        cardDatas.map((cardData) => <Card data={cardData} key={cardData.id}></Card>)
+                        cardDatas.map((cardData) => <Card data={cardData} key={cardData.id} addToSidebar={addToSidebar}></Card>)
                       } 
                     </div>
                 </div>
                 
                 <div className="col-lg-3">
-                    <Sidebar></Sidebar>
+                    <Sidebar excercises={sideBar}></Sidebar>
                 </div>
             </div>
         </div>

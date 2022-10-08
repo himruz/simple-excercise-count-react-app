@@ -3,7 +3,12 @@ import './Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = () => {
+const Sidebar = ({excercises}) => {
+    console.log(excercises);
+    let excerciseTime = 0;
+    for (const excercise of excercises) {
+        excerciseTime = excerciseTime + excercise.time
+    }
     return (
         <div className='sidebar mt-5'>
             <div className="profile-info d-flex align-items-center">
@@ -60,7 +65,7 @@ const Sidebar = () => {
                 </div>
                 <div className="excercise-time mt-5 d-flex align-items-center">
                     <h4 className='me-3'>Excercise Time</h4>
-                    <span>200 Second</span>
+                    <span>{excerciseTime} Second</span>
                 </div>
                 <div className="break d-flex align-items-center mt-3">
                     <h4 className='me-3'>Break Time</h4>
